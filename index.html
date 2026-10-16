@@ -609,6 +609,11 @@ body{background:#fdfdfc;color:var(--ink);letter-spacing:-.003em}
 .link:hover{color:var(--orange-deep)}
 .metric-item+.metric-item{border-color:var(--border)}
 
+/* cross-industry site tags in the hero example */
+.real-task-sites a>span:first-child{flex:1;min-width:0}
+.real-site-tag{flex:none;font:500 10px var(--mono);color:#6a7a6c;background:#f1f4ef;border:1px solid #e4e9e2;border-radius:20px;padding:4px 10px;white-space:nowrap;letter-spacing:.03em}
+.real-task-sites a{cursor:default}
+
 /* final CTA: subtle warm floor */
 .last{position:relative;overflow:hidden}
 .last::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
@@ -637,7 +642,7 @@ body{background:#fdfdfc;color:var(--ink);letter-spacing:-.003em}
 <div class="hero-route"><span class="route-kicker">FOR ENTERPRISE</span><a class="secondary" href="https://www.tinyfish.ai/talk-to-sales">Talk to Sales ↗</a><small>Production workflows, security &amp; scale.</small></div>
 </div>
 <div class="editor-note"><strong>01 / Hero messaging</strong> · Keep the category clear, then explain the benefit in plain English. I kept Mako out of the hero because first-time visitors will not know what it is. The phrase “other tools can’t” needs direct competitive proof before launch; otherwise I would change the headline.</div>
-<figure class="demo-wrap" aria-label="Try an official TinyFish Agent workflow in the Playground">
+<figure class="demo-wrap" aria-label="Illustrative TinyFish Agent workflow across many sites">
   <div class="demo demo-enterprise live-agent-demo">
     <div class="demo-header">
       <span aria-hidden="true" class="dots"><i></i><i></i><i></i></span>
@@ -645,35 +650,35 @@ body{background:#fdfdfc;color:var(--ink);letter-spacing:-.003em}
       <a class="live-top-link" href="https://agent.tinyfish.ai/examples" target="_blank" rel="noopener noreferrer">Source example ↗</a>
     </div>
     <div class="demo-body">
-      <div class="d-topline"><span class="demo-kicker">Example task · works across any set of sites</span></div>
+      <div class="d-topline"><span class="demo-kicker">Example task · works across any industry</span></div>
       <p class="task-text">Run one task across many websites.</p>
-      <p class="d-task-desc">In this published TinyFish example the task is to find the online ordering system each site uses. The same pattern runs across retail, travel, suppliers, and more. Copy it and run it in the Playground.</p>
+      <p class="d-task-desc">Give a goal in plain English and a list of sites. TinyFish runs it across all of them and returns structured data, the same way whether it is a product page, a supplier portal, or a booking site.</p>
       <div class="real-task-layout">
-        <section class="real-task-sites" aria-label="Websites used in the official example">
-          <div class="real-panel-label">Websites</div>
-          <a href="https://www.buttermilkbourbon.com/" target="_blank" rel="noopener noreferrer"><span><strong>Buttermilk &amp; Bourbon</strong><small>buttermilkbourbon.com</small></span><span class="real-site-arrow">↗</span></a>
-          <a href="https://www.row34.com/" target="_blank" rel="noopener noreferrer"><span><strong>Row 34</strong><small>row34.com</small></span><span class="real-site-arrow">↗</span></a>
-          <a href="https://midarestaurant.com/" target="_blank" rel="noopener noreferrer"><span><strong>MIDA</strong><small>midarestaurant.com</small></span><span class="real-site-arrow">↗</span></a>
-          
+        <section class="real-task-sites" aria-label="Example sites across industries">
+          <div class="real-panel-label">Your sites</div>
+          <a><span><strong>Retail product page</strong><small>store.example.com</small></span><span class="real-site-tag">Retail</span></a>
+          <a><span><strong>Supplier portal (login)</strong><small>portal.vendor.example</small></span><span class="real-site-tag">Suppliers</span></a>
+          <a><span><strong>Travel &amp; booking site</strong><small>book.example.com</small></span><span class="real-site-tag">Travel</span></a>
+          <a><span><strong>Marketplace listing</strong><small>market.example.com</small></span><span class="real-site-tag">Marketplace</span></a>
+          <a><span><strong>+ hundreds more</strong><small>your own list of sites</small></span><span class="real-site-tag">Any</span></a>
         </section>
-        <section class="real-task-instructions" aria-label="A runnable TinyAgent task">
-          <div class="real-panel-label">The task</div>
-          <p>Check each website for an online ordering system. Name the provider and include the URL where you verified it. Return JSON.</p>
-          <div class="real-schema"><span>Return fields</span><code>vendor_name</code><code>evidence_url</code></div>
+        <section class="real-task-instructions" aria-label="A plain-English TinyAgent task">
+          <div class="real-panel-label">The goal</div>
+          <p>For each site, find the data you need and the page where you confirmed it. Return it as structured JSON, with the same fields across every site.</p>
+          <div class="real-schema"><span>Return fields</span><code>value</code><code>status</code><code>evidence_url</code></div>
           <div class="real-task-cta">
             <button class="real-copy" id="copy-live-task" type="button">Copy task</button>
             <a class="real-open" href="https://agent.tinyfish.ai/playground" target="_blank" rel="noopener noreferrer">Open Playground ↗</a>
           </div>
-          <p class="real-task-status" id="copy-live-status" aria-live="polite">Paste the task into the Playground to run it.</p>
-          <textarea id="live-task-prompt" class="real-copy-source" readonly aria-label="Official tech stack detection task">Urls: [
-https://www.buttermilkbourbon.com/
-https://www.row34.com/
-https://midarestaurant.com/
+          <p class="real-task-status" id="copy-live-status" aria-live="polite">Paste the task into the Playground and swap in your own sites.</p>
+          <textarea id="live-task-prompt" class="real-copy-source" readonly aria-label="Plain-English multi-site task template">Sites: [
+  your list of URLs, any industry
 ]
-Prompt: Visit each URL and identify the online ordering system (e.g., Toast, Square, Olo). Return the vendor name and the evidence URL where you confirmed it. Only look for food ordering systems. Return as JSON.</textarea>
+Goal: For each site, find the data you need (for example price, availability, or a document) and the URL where you confirmed it.
+Return structured JSON with the same fields for every site.</textarea>
         </section>
       </div>
-      <div class="real-task-foot"><span>Based on a public TinyFish example. Results appear in the Playground.</span><a href="https://agent.tinyfish.ai/examples" target="_blank" rel="noopener noreferrer">More examples ↗</a></div>
+      <div class="real-task-foot"><span>Illustrative pattern. Bring any goal and your own list of sites in the Playground.</span><a href="https://agent.tinyfish.ai/examples" target="_blank" rel="noopener noreferrer">See real examples ↗</a></div>
     </div>
   </div>
 </figure>
@@ -682,7 +687,16 @@ Prompt: Visit each URL and identify the online ordering system (e.g., Toast, Squ
 <div class="metric-item"><div class="metric-big">1M+</div><div class="metric-name">web workflows / quarter</div><div class="metric-source">DoorDash · reported volume</div></div>
 <div class="metric-item"><div class="metric-big">98.6%</div><div class="metric-name">less manual work</div><div class="metric-source">ClassPass · reported result</div></div>
 <div class="metric-item"><div class="metric-big">89.9%</div><div class="metric-name">Online-Mind2Web success</div><div class="metric-source">TinyAgent · published benchmark, 300 runs</div></div>
-</div><div class="metric-footer"><a href="https://www.tinyfish.ai/customers">Read customer stories ↗</a><a href="https://www.tinyfish.ai/benchmarks">View benchmark methodology ↗</a></div><div class="editor-note"><strong>02 / Put proof up front</strong> · Logos and meaningful numbers are close to the hero. DoorDash’s workflow count, ClassPass’s manual-work reduction, and TinyAgent’s published benchmark measure different things; none establishes a head-to-head win against another platform.</div></div></div></section><section class="section" id="products"><div class="frame"><div class="wrap spacer"><div class="section-head"><h2>Search, browse, <span class="orange">and act.</span></h2><div class="section-desc"><p>Search and Fetch gather live information. Browser and Agent handle the actions that follow.</p></div></div>
+</div><div class="metric-footer"><a href="https://www.tinyfish.ai/customers">Read customer stories ↗</a><a href="https://www.tinyfish.ai/benchmarks">View benchmark methodology ↗</a></div><div class="editor-note"><strong>02 / Put proof up front</strong> · Logos and meaningful numbers are close to the hero. DoorDash’s workflow count, ClassPass’s manual-work reduction, and TinyAgent’s published benchmark measure different things; none establishes a head-to-head win against another platform.</div></div></div></section><section class="section" id="usecases"><div class="frame"><div class="wrap spacer">
+<div class="section-head"><h2>What you can <span class="orange">get done.</span></h2><div class="section-desc"><p>One platform, many jobs, across every industry your agents touch. Describe the work in plain English; TinyFish finishes it and returns structured data.</p></div></div>
+<div class="four">
+<div class="use-card"><div class="icon-frame"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M10.3 21a2 2 0 0 0 3.4 0"/></svg></div><h3>Monitor</h3><p>Watch prices, listings, filings and job posts across sites, and get told when something changes.</p><div class="use-result">Retail · travel · finance · hiring</div></div>
+<div class="use-card"><div class="icon-frame"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div><h3>Enrich</h3><p>Check your CRM records against the live web for headcount, HQ, ownership and status.</p><div class="use-result">Keeps records current, no manual lookups</div></div>
+<div class="use-card"><div class="icon-frame"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>Research</h3><p>Answer a question across many sources and return linked evidence, not just a list of links.</p><div class="use-result">Reads hundreds of pages per run</div></div>
+<div class="use-card"><div class="icon-frame"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h3>Automate portals</h3><p>Sign in, fill forms and pull files from supplier and partner portals, behind the login.</p><div class="use-result">Authenticated · multi-step · recorded</div></div>
+</div>
+<div class="editor-note"><strong>02 / Breadth before depth</strong> · TinyFish's own homepage leads with four cross-industry jobs, which is a strength. I keep it but frame each around finishing the work and returning structured data, so the hero example reads as one instance of a general capability rather than a single vertical.</div>
+</div></div></section><section class="section" id="products"><div class="frame"><div class="wrap spacer"><div class="section-head"><h2>Search, browse, <span class="orange">and act.</span></h2><div class="section-desc"><p>Search and Fetch gather live information. Browser and Agent handle the actions that follow.</p></div></div>
 <div aria-label="Illustrative TinyFish product experience" class="product-preview minimal-product-preview">
 <div class="product-preview-left"><h3>Explore the tools.</h3>
 <div aria-label="Select TinyFish product preview" class="pp-tabs" role="tablist">
@@ -732,6 +746,15 @@ Includes advanced controls</pre><div class="pp-answer">Clean, structured page co
 </div>
 <div class="trust-summary"><div><strong>Security and control for enterprise teams.</strong><span>SSO, audit logs, credential management and deployment options.</span></div><div class="trust-summary-links"><a href="https://trust.tinyfish.ai/">Trust Center ↗</a><a href="https://www.tinyfish.ai/talk-to-sales">Talk to Sales ↗</a></div></div>
 <div class="editor-note"><strong>04 / Answer the hard questions</strong> · Mako explains the execution mechanism; TinyVault and Profiles address identity, and run recordings make activity reviewable. Keep the demo interactive rather than repeating feature cards. Enterprise details are linked, not packed into the homepage.</div>
+</div></div></section><section class="section" id="faq"><div class="frame"><div class="wrap spacer">
+<div class="section-head"><h2>Questions, <span class="orange">answered.</span></h2><div class="section-desc"><p>What developers and enterprise buyers ask before they commit.</p></div></div>
+<div class="faq-list">
+<details><summary>How is TinyFish different from other tools?</summary><p>TinyFish owns a web-execution model, Mako, trained on real production web-task data. Browser-infrastructure tools and search or data APIs give you parts to assemble; TinyFish runs the model that finishes the task. One API key covers Search, Fetch, Browser and Agent.</p></details>
+<details><summary>How accurate is TinyAgent?</summary><p>89.9% overall and 81.9% on hard tasks on Online-Mind2Web, with all 300 runs published. That is a task-success benchmark; a 99.99% uptime SLA is a separate infrastructure number and does not mean the same thing.</p></details>
+<details><summary>Can agents work behind logins?</summary><p>Yes. TinyVault supplies credentials so the agent can sign in, and the model never sees them. TinyProfiles keeps signed-in sessions available for reuse, and every run is recorded step by step.</p></details>
+<details><summary>What happens to our data, and do you train on it?</summary><p>Credentials are isolated by TinyVault and are never exposed to the model. How your task data is handled, including retention and whether it is used to train models, is set out in enterprise agreements, so this is a question to confirm on a sales call rather than assume from the homepage.</p></details>
+<details><summary>Is it free to start?</summary><p>Search and Fetch are free on every plan once you have an API key. Browser and Agent are usage-based, so you only pay for what you run, and there is no sales call required to try it.</p></details>
+</div>
 </div></div></section><section class="section"><div class="frame"><div class="last"><span class="eyebrow">GET STARTED</span><h2>Try it on your own workflow.</h2><p>Start with an API key, or talk to the team about production use.</p><div class="actions"><a class="primary" href="https://agent.tinyfish.ai/">Get API Key ↗</a><a class="secondary" href="https://www.tinyfish.ai/talk-to-sales">Talk to Sales ↗</a></div><div class="editor-note"><strong>05 / Two motions, one promise</strong> · Developers can get started without a sales call; enterprise buyers have a clear path to evaluate security, reliability, and scale. Measure first successful tasks and qualified enterprise conversations, not only click-throughs.</div></div></div></section><section class="review" id="pmm-review"><div class="frame"><div class="wrap review-inner"><div class="review-intro"><span class="eyebrow">PMM TAKE-HOME / REVIEW NOTES</span><h2>Why I changed the homepage.</h2><p>A homepage direction for the PMM take-home, not an official TinyFish design.</p></div><div class="review-grid">
 <article class="review-box"><strong>01 / Positioning</strong><p>The current copy explains what the platform can do. I wanted the hero to speak to the job a customer needs done. “Other tools can’t” is still a claim to test against competitors, not a proven fact. I would soften it if the comparison data does not support it.</p></article>
 <article class="review-box"><strong>02 / Customer proof</strong><p>I moved real results closer to the top. DoorDash, ClassPass and the benchmark each show a different kind of proof; I have kept those distinctions clear.</p></article>

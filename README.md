@@ -30,7 +30,9 @@ So the concept moves the message from **access → finished work**, and leads wi
 - **Speaks to both audiences on one page.** A labeled dual entry in the hero (For developers / For enterprise) plus a dedicated "One platform. Two ways in." section, patterned on how Stripe, Cloudflare and Exa route a self-serve motion and a sales-led motion without splitting the positioning.
 - **Proof moved up and labeled separately.** DoorDash volume, ClassPass manual-work reduction, and the TinyAgent benchmark measure different things and are labeled as such.
 - **Security and data policy surfaced for enterprise.** SSO, audit logs, credential isolation (TinyVault), deployment options, and a clear data-use / model-training policy. This last point is the key enterprise tension: because Mako is trained on production web-task data, the buyer's first question is whether their data trains the model, so the page should answer it directly.
-- **Hero example reframed.** The real published TinyFish Playground example is kept (so it is verifiable), but the card now leads with "Run one task across many websites" so the page is not mistaken for a restaurant-specific tool.
+- **Hero example is cross-industry.** The hero demo shows one goal running across a mix of sites (retail, supplier portals, travel, marketplaces, and more) so the page reads as a general platform, not a single vertical. It is labeled illustrative, and a "See real examples" link points to TinyFish's published examples.
+- **Breadth, matched to the official site.** A "What you can get done" section covers four cross-industry jobs (Monitor, Enrich, Research, Automate portals), mirroring the strongest part of TinyFish's current homepage but framed around finishing the work and returning structured data.
+- **FAQ.** Five questions developers and enterprise buyers actually ask, including a direct data-use and model-training question, which doubles as SEO-friendly content.
 
 ## Evidence discipline
 
