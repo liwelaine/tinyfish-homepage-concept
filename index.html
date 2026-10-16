@@ -608,11 +608,67 @@ body{background:#fdfdfc;color:var(--ink);letter-spacing:-.003em}
 .link,.metric-footer a,.trust-summary-links a,.story-footer a{transition:color .15s ease}
 .link:hover{color:var(--orange-deep)}
 .metric-item+.metric-item{border-color:var(--border)}
+.hero-helper{margin:16px auto 0;color:#7a847b;font:12px/1.55 var(--mono);max-width:480px}
+.hero-helper a{color:#3a5543;font-weight:600;text-decoration:none}
+.hero-helper a:hover{color:var(--orange-deep)}
+.hero-mako{display:inline-flex;align-items:center;gap:7px;margin:19px auto 0;padding:5px 14px;border:1px solid #f1d9c8;background:#fff4ec;color:#b4440f;border-radius:999px;font:500 12px var(--mono);letter-spacing:.015em}
+.hero-mako .hm-dot{color:var(--orange);font-size:11px}
+
+/* events poster cards (merged from events page) */
+.ev-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin-top:40px}
+.ev-card{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:#fff;text-decoration:none;color:inherit;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.ev-card:hover{border-color:#cdd5cc;transform:translateY(-3px);box-shadow:0 22px 40px -26px rgba(26,42,32,.5)}
+.ev-poster{position:relative;aspect-ratio:3/2;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:20px 22px;color:#fff}
+.ev-poster .pz{position:relative;z-index:2}
+.ev-poster .pz-fish{position:absolute;z-index:1;right:-14px;bottom:-22px;width:150px;height:132px;opacity:.9;filter:drop-shadow(0 8px 18px rgba(0,0,0,.18))}
+.ev-wordmark{display:inline-flex;align-items:center;gap:6px;font:600 13px var(--display);letter-spacing:-.04em}
+.ev-wordmark svg{width:21px;height:18px}
+.ev-poster h3.ev-title{font:500 clamp(26px,3.3vw,36px)/1 var(--display);letter-spacing:-.04em;max-width:74%;margin:0;color:#fff}
+.ev-poster .pz-sub{margin-top:8px;font:500 11px var(--mono);letter-spacing:.04em;opacity:.9}
+.pv-vietnam{background:linear-gradient(135deg,#f07a24 0%,#d64418 55%,#a32c13 100%)}
+.pv-vietnam .pz-star{position:absolute;z-index:2;right:26px;top:24px;color:#ffd54a;font-size:22px}
+.pv-fishships{background:radial-gradient(120% 120% at 15% 10%,#f3f5ec,#e7ebdd);color:#1f2d26}
+.pv-fishships .ev-wordmark,.pv-fishships h3.ev-title{color:#1f2d26}
+.pv-fishships h3.ev-title .amp{color:var(--orange)}
+.pv-fishships .pz-sub{color:#5a675c}
+.pv-fishships .pz-route{position:absolute;z-index:1;left:0;right:0;bottom:34%;height:2px;background:repeating-linear-gradient(90deg,#c25a20 0 7px,transparent 7px 15px);opacity:.6}
+.pv-bigminds{background:linear-gradient(150deg,#2a443b 0%,#16271f 60%,#0b1813 100%)}
+.pv-bigminds .pz-sub{color:#cbb79a}
+.pv-happyhour{background:linear-gradient(135deg,#ec9a3f 0%,#e06a24 55%,#c7501b 100%)}
+.ev-poster .pz-grid{position:absolute;inset:0;z-index:0;background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1.4px);background-size:16px 16px;opacity:.5;pointer-events:none}
+.pv-fishships .pz-grid{background-image:radial-gradient(rgba(40,70,52,.12) 1px,transparent 1.4px)}
+.ev-body{padding:20px 22px 22px}
+.ev-date{font:500 11px/1.4 var(--mono);color:var(--orange-deep);letter-spacing:.03em;display:block;margin-bottom:8px}
+.ev-body h4{font:500 21px/1.18 var(--display);letter-spacing:-.025em;margin:0 0 7px}
+.ev-loc{font:500 11px var(--mono);color:#8a948b;margin:0 0 11px}
+.ev-body p{font:13.5px/1.6 var(--body);color:#56635a;margin:0 0 15px}
+.ev-link{font:600 13px var(--body);color:#36553e;text-decoration:none}
+.ev-card:hover .ev-link{color:var(--orange-deep)}
+.events-footnote{margin-top:22px;font:12px/1.6 var(--body);color:#6b766d}
+@media(max-width:760px){.ev-grid{grid-template-columns:1fr;gap:20px}}
+
+/* hero announcement pill (Cloudflare-style) */
+.hero-announce{display:inline-flex;align-items:center;gap:11px;margin:0 auto 24px;padding:6px 7px 6px 17px;border:1px solid var(--border);border-radius:999px;background:#fff;font:500 12.5px var(--body);color:#2a332c;text-decoration:none;box-shadow:0 1px 2px rgba(20,26,22,.05);transition:border-color .16s ease,transform .16s ease,box-shadow .16s ease}
+.hero-announce:hover{border-color:#cdd5cc;transform:translateY(-1px);box-shadow:0 8px 20px -14px rgba(20,26,22,.3)}
+.hero-announce b{font-weight:600}
+.hero-announce .ha-arrow{display:inline-grid;place-items:center;width:23px;height:23px;border-radius:50%;background:var(--orange);color:#fff;font-size:12px;flex:none}
+/* events section */
+.events-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:38px}
+.event-row{display:flex;align-items:center;justify-content:space-between;gap:18px;border:1px solid var(--border);border-radius:11px;background:#fafbf9;padding:21px 23px;text-decoration:none;color:inherit;transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease}
+.event-row:hover{border-color:#cdd5cc;transform:translateY(-2px);box-shadow:0 14px 26px -20px rgba(26,42,32,.4)}
+.event-row>div{min-width:0}
+.event-date{font:500 11px/1.4 var(--mono);color:#b45420;letter-spacing:.02em;display:block;margin-bottom:7px}
+.event-row h3{font:500 19px/1.2 var(--display);letter-spacing:-.022em;margin:0 0 4px;color:#1b241e}
+.event-row p{font:12.5px/1.5 var(--body);color:#5a655b;margin:0}
+.event-row .ev-go{font-size:17px;color:#9aa69b;flex:none}
+.events-foot{margin-top:17px;font:12px/1.6 var(--body);color:#6b766d}
+@media(max-width:760px){.events-grid{grid-template-columns:1fr}.event-row{padding:17px 18px}}
 
 /* cross-industry site tags in the hero example */
 .real-task-sites a>span:first-child{flex:1;min-width:0}
 .real-site-tag{flex:none;font:500 10px var(--mono);color:#6a7a6c;background:#f1f4ef;border:1px solid #e4e9e2;border-radius:20px;padding:4px 10px;white-space:nowrap;letter-spacing:.03em}
 .real-task-sites a{cursor:default}
+.real-output{font:11px/1.5 var(--mono);color:#5a765f;margin:12px 0 0;padding-top:11px;border-top:1px dashed #e4e9e2}
 
 /* final CTA: subtle warm floor */
 .last{position:relative;overflow:hidden}
@@ -623,6 +679,41 @@ body{background:#fdfdfc;color:var(--ink);letter-spacing:-.003em}
 @media(prefers-reduced-motion:reduce){
   .primary,.secondary,.navtools a.signup,.story,.security-tile,.use-card{transition:none!important}
 }
+
+/* ============================================================
+   MAKO BAND — bigger presence, clearer story, commercial weight
+   ============================================================ */
+#execution .mako-block{display:grid;grid-template-columns:1.08fr .92fr;gap:46px;align-items:stretch;margin-top:36px}
+.mako-lead{display:flex;flex-direction:column}
+.mako-lead .eyebrow{font:600 11px/1 var(--mono);letter-spacing:.11em;color:var(--orange-deep);text-transform:uppercase;margin-bottom:16px}
+.mako-lead h3{font:500 clamp(28px,3.1vw,37px)/1.08 var(--display);letter-spacing:-.035em;color:var(--ink);margin:0 0 15px;max-width:14ch}
+.mako-lead p{font:15px/1.68 var(--body);color:var(--soft);margin:0 0 15px;max-width:52ch}
+.mako-lead p b{color:var(--ink);font-weight:600}
+.mako-lead .link{font:600 14px var(--body);color:var(--orange-deep);margin-top:auto;padding-top:6px}
+/* dark spec panel = enterprise/technical gravity */
+.mako-panel{position:relative;overflow:hidden;border-radius:16px;padding:30px 30px 26px;
+  background:linear-gradient(158deg,#213a30 0%,#152a22 55%,#0c1a14 100%);
+  box-shadow:0 18px 40px -22px rgba(12,26,20,.6),inset 0 1px 0 rgba(255,255,255,.04)}
+.mako-panel::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 90% at 100% 0,rgba(214,87,31,.22),rgba(214,87,31,0) 55%)}
+.mako-panel>*{position:relative;z-index:1}
+.mako-panel .mp-cap{font:600 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#8fb49f;margin-bottom:20px}
+.mp-stats{display:grid;gap:0}
+.mp-stats>div{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:baseline;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mp-stats>div:first-of-type{padding-top:0}
+.mp-stats>div:last-child{border-bottom:0;padding-bottom:0}
+.mp-num{font:500 30px/1 var(--display);letter-spacing:-.03em;color:#fff;white-space:nowrap}
+.mp-num .mp-unit{font-size:15px;color:#c7d6cc;margin-left:3px}
+.mp-txt strong{display:block;font:600 13px/1.3 var(--body);color:#eef3ef;margin-bottom:2px}
+.mp-txt small{font:12px/1.45 var(--body);color:#93a89a}
+/* why it matters — commercial outcomes */
+.mako-why{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:40px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.mako-why>div{background:#fff;padding:24px 24px 26px}
+.mako-why .mw-ic{font:600 11px var(--mono);color:var(--orange-deep);letter-spacing:.04em;margin-bottom:11px}
+.mako-why h4{font:600 16px/1.25 var(--body);color:var(--ink);margin:0 0 7px;letter-spacing:-.01em}
+.mako-why p{font:13px/1.6 var(--body);color:var(--soft);margin:0 0 10px}
+.mako-why .mw-out{font:600 12px/1.45 var(--body);color:#20352e;padding-top:10px;border-top:1px solid var(--hair)}
+@media(max-width:860px){#execution .mako-block{grid-template-columns:1fr;gap:28px}.mako-why{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -631,54 +722,56 @@ body{background:#fdfdfc;color:var(--ink);letter-spacing:-.003em}
 <symbol id="fish" viewbox="0 0 100 80"><path d="M28 28 6 9 10 39 5 64 29 53" fill="#f36512" stroke="#171b16" stroke-linejoin="round" stroke-width="4.5"></path><path d="M37 21 Q46 7 62 14 L60 29Z" fill="#ff8628" stroke="#171b16" stroke-linejoin="round" stroke-width="4"></path><path d="M31 29 C45 12 74 10 89 29 C99 43 88 60 67 66 C50 72 32 60 26 44 C23 38 26 34 31 29Z" fill="#ffc991" stroke="#171b16" stroke-width="4.5"></path><path d="M49 56 Q52 68 44 75 Q64 75 66 63Z" fill="#ff962d" stroke="#171b16" stroke-width="3.5"></path><ellipse cx="68" cy="37" fill="#161b16" rx="3.7" ry="5.4"></ellipse><ellipse cx="84" cy="36" fill="#161b16" rx="2.5" ry="3.8"></ellipse><path d="M66 48 Q75 56 85 47" fill="none" stroke="#171b16" stroke-linecap="round" stroke-width="3.4"></path></symbol>
 <symbol id="shoal" viewbox="0 0 130 150"><use height="49" href="#fish" width="62" x="14" y="0"></use><use height="63" href="#fish" width="78" x="53" y="50"></use><use height="42" href="#fish" width="51" x="8" y="93"></use></symbol>
 </defs></svg>
-<header class="topnav"><div class="navinner"><a class="brand" href="#home"><svg aria-label="TinyFish fish illustration" class="fishmark" role="img"><use href="#fish"></use></svg> TinyFish <span class="concept-tag">Concept</span></a><nav aria-label="Primary" class="navlist"><a href="#products">Platform</a><a href="#execution">Mako &amp; security</a><a href="#proof">Results</a><a href="https://www.tinyfish.ai/enterprise">Enterprise</a><a href="https://docs.tinyfish.ai/">Docs</a></nav><div class="navtools"><a class="sales" href="https://www.tinyfish.ai/talk-to-sales">Talk to Sales ↗</a><a class="signup" href="https://agent.tinyfish.ai/">Get API Key ↗</a></div></div></header>
+<header class="topnav"><div class="navinner"><a class="brand" href="#home"><svg aria-label="TinyFish fish illustration" class="fishmark" role="img"><use href="#fish"></use></svg> TinyFish <span class="concept-tag">Concept</span></a><nav aria-label="Primary" class="navlist"><a href="#products">Platform</a><a href="#execution">Mako &amp; security</a><a href="#proof">Results</a><a href="#enterprise">Enterprise</a><a href="#events">Events</a><a href="https://docs.tinyfish.ai/">Docs</a></nav><div class="navtools"><a class="sales" href="https://www.tinyfish.ai/talk-to-sales">Talk to Sales →</a><a class="signup" href="https://agent.tinyfish.ai/">Get API Key →</a></div></div></header>
 <div class="concept-ribbon"><div class="ribboninner"><span>Independent TinyFish homepage concept</span><button aria-expanded="false" id="notes-button" type="button">PMM notes</button></div></div>
 <main id="home"><section class="section hero"><div class="frame"><div class="wrap hero-content">
-<div class="eyebrow">Web infrastructure for AI agents</div>
+<a class="hero-announce" href="#events">TinyFish in Vietnam <b>· Oct 23 to 28</b> <span class="ha-arrow" aria-hidden="true">→</span></a>
 <h1>Finish the web work <span class="orange">other tools can’t.</span></h1>
-<p class="hero-summary">TinyFish uses a model trained for web execution to handle changing pages, logins, and multi-step tasks with less script maintenance.</p>
-<div aria-label="Choose how to evaluate TinyFish" class="hero-gateway">
-<div class="hero-route"><span class="route-kicker">FOR DEVELOPERS</span><a class="primary" href="https://agent.tinyfish.ai/">Get API Key ↗</a><small>Free Search &amp; Fetch. No sales call.</small></div>
-<div class="hero-route"><span class="route-kicker">FOR ENTERPRISE</span><a class="secondary" href="https://www.tinyfish.ai/talk-to-sales">Talk to Sales ↗</a><small>Production workflows, security &amp; scale.</small></div>
-</div>
-<div class="editor-note"><strong>01 / Hero messaging</strong> · Keep the category clear, then explain the benefit in plain English. I kept Mako out of the hero because first-time visitors will not know what it is. The phrase “other tools can’t” needs direct competitive proof before launch; otherwise I would change the headline.</div>
+<div class="hero-mako"><span class="hm-dot" aria-hidden="true">✦</span> Powered by Mako, TinyFish's web-native model</div>
+<p class="hero-summary">Agents handle changing pages, work behind logins, and finish multi-step workflows in production, with less maintenance.</p>
+<div class="actions"><a class="primary" href="https://agent.tinyfish.ai/">Start building for free</a></div>
+<p class="hero-helper">Search and Fetch are free. <a href="https://www.tinyfish.ai/talk-to-sales">Talk to our team for production use →</a></p>
+<div class="editor-note"><strong>01 / Hero messaging</strong> · Keep the category clear, then explain the benefit in plain English. The subheadline now names Mako, TinyFish's own web-native model, so the owned-model positioning is visible in the first screen. The phrase “other tools can’t” needs direct competitive proof before launch; otherwise I would change the headline.</div>
 <figure class="demo-wrap" aria-label="Illustrative TinyFish Agent workflow across many sites">
   <div class="demo demo-enterprise live-agent-demo">
     <div class="demo-header">
       <span aria-hidden="true" class="dots"><i></i><i></i><i></i></span>
       <span class="demo-title">TinyAgent <span class="d-head-dot">/</span> Example task</span>
-      <a class="live-top-link" href="https://agent.tinyfish.ai/examples" target="_blank" rel="noopener noreferrer">Source example ↗</a>
+      <a class="live-top-link" href="https://agent.tinyfish.ai/examples" target="_blank" rel="noopener noreferrer">Source example →</a>
     </div>
     <div class="demo-body">
-      <div class="d-topline"><span class="demo-kicker">Example task · works across any industry</span></div>
-      <p class="task-text">Run one task across many websites.</p>
-      <p class="d-task-desc">Give a goal in plain English and a list of sites. TinyFish runs it across all of them and returns structured data, the same way whether it is a product page, a supplier portal, or a booking site.</p>
+      <div class="d-topline"><span class="demo-kicker">Example task · illustrative</span></div>
+      <p class="task-text">Pull October invoices from 300 supplier portals.</p>
+      <p class="d-task-desc">One request. TinyFish signs in to each authorized portal, downloads the invoices, and returns a structured summary across all of them, with the vendor, invoice date, amount, and source link.</p>
       <div class="real-task-layout">
-        <section class="real-task-sites" aria-label="Example sites across industries">
-          <div class="real-panel-label">Your sites</div>
-          <a><span><strong>Retail product page</strong><small>store.example.com</small></span><span class="real-site-tag">Retail</span></a>
-          <a><span><strong>Supplier portal (login)</strong><small>portal.vendor.example</small></span><span class="real-site-tag">Suppliers</span></a>
-          <a><span><strong>Travel &amp; booking site</strong><small>book.example.com</small></span><span class="real-site-tag">Travel</span></a>
-          <a><span><strong>Marketplace listing</strong><small>market.example.com</small></span><span class="real-site-tag">Marketplace</span></a>
-          <a><span><strong>+ hundreds more</strong><small>your own list of sites</small></span><span class="real-site-tag">Any</span></a>
+        <section class="real-task-sites" aria-label="Example supplier portals">
+          <div class="real-panel-label">Your portals</div>
+          <a><span><strong>Acme Supplies</strong><small>portal.acme.example</small></span><span class="real-site-tag">Login</span></a>
+          <a><span><strong>Globex Procurement</strong><small>billing.globex.example</small></span><span class="real-site-tag">Login</span></a>
+          <a><span><strong>Initech Vendor Hub</strong><small>vendor.initech.example</small></span><span class="real-site-tag">Login</span></a>
+          <a><span><strong>+ 297 more</strong><small>across 300 supplier portals</small></span><span class="real-site-tag">Scale</span></a>
         </section>
         <section class="real-task-instructions" aria-label="A plain-English TinyAgent task">
           <div class="real-panel-label">The goal</div>
-          <p>For each site, find the data you need and the page where you confirmed it. Return it as structured JSON, with the same fields across every site.</p>
-          <div class="real-schema"><span>Return fields</span><code>value</code><code>status</code><code>evidence_url</code></div>
+          <p>Sign in to each authorized supplier portal, download the October invoices, and return a structured summary for every vendor.</p>
+          <div class="real-schema"><span>Return fields</span><code>vendor</code><code>invoice_date</code><code>amount</code><code>source_link</code></div>
+          <div class="real-output">Expected output: invoice files + a structured summary.</div>
           <div class="real-task-cta">
             <button class="real-copy" id="copy-live-task" type="button">Copy task</button>
-            <a class="real-open" href="https://agent.tinyfish.ai/playground" target="_blank" rel="noopener noreferrer">Open Playground ↗</a>
+            <a class="real-open" href="https://agent.tinyfish.ai/playground" target="_blank" rel="noopener noreferrer">Open Playground →</a>
           </div>
-          <p class="real-task-status" id="copy-live-status" aria-live="polite">Paste the task into the Playground and swap in your own sites.</p>
-          <textarea id="live-task-prompt" class="real-copy-source" readonly aria-label="Plain-English multi-site task template">Sites: [
-  your list of URLs, any industry
+          <p class="real-task-status" id="copy-live-status" aria-live="polite">Paste the task into the Playground and swap in your own portals.</p>
+          <textarea id="live-task-prompt" class="real-copy-source" readonly aria-label="Supplier invoice retrieval task">Portals: [
+  portal.acme.example
+  billing.globex.example
+  vendor.initech.example
 ]
-Goal: For each site, find the data you need (for example price, availability, or a document) and the URL where you confirmed it.
-Return structured JSON with the same fields for every site.</textarea>
+Task: Across all 300 authorized supplier portals, sign in, download the October invoices,
+and return a structured summary for each with: vendor, invoice_date, amount, source_link.
+Deliver the invoice files plus the summary as JSON.</textarea>
         </section>
       </div>
-      <div class="real-task-foot"><span>Illustrative pattern. Bring any goal and your own list of sites in the Playground.</span><a href="https://agent.tinyfish.ai/examples" target="_blank" rel="noopener noreferrer">See real examples ↗</a></div>
+      <div class="real-task-foot"><span>Illustrative concept, not a real TinyFish execution record.</span><a href="https://agent.tinyfish.ai/examples" target="_blank" rel="noopener noreferrer">See real examples →</a></div>
     </div>
   </div>
 </figure>
@@ -687,7 +780,34 @@ Return structured JSON with the same fields for every site.</textarea>
 <div class="metric-item"><div class="metric-big">89.9%</div><div class="metric-name">Online-Mind2Web success</div><div class="metric-source">TinyAgent · overall score</div></div>
 <div class="metric-item"><div class="metric-big">81.9%</div><div class="metric-name">success on hard tasks</div><div class="metric-source">Online-Mind2Web · hard split</div></div>
 <div class="metric-item"><div class="metric-big">300</div><div class="metric-name">runs published</div><div class="metric-source">Full benchmark open-sourced</div></div>
-</div><div class="metric-footer"><a href="#customers">See customer outcomes ↓</a><a href="https://www.tinyfish.ai/benchmarks">View benchmark methodology ↗</a></div><div class="editor-note"><strong>02 / Benchmark up top, outcomes below</strong> · The logo wall and the open benchmark sit near the hero; customer outcome numbers live in their own section lower down, so no figure is repeated. DoorDash’s workflow count, ClassPass’s manual-work reduction, and TinyAgent’s published benchmark measure different things; none establishes a head-to-head win against another platform.</div></div></div></section><section class="section" id="usecases"><div class="frame"><div class="wrap spacer">
+</div><div class="metric-footer"><a href="#customers">See customer outcomes ↓</a><a href="https://www.tinyfish.ai/benchmarks">View benchmark methodology →</a></div><div class="editor-note"><strong>02 / Benchmark up top, outcomes below</strong> · The logo wall and the open benchmark sit near the hero; customer outcome numbers live in their own section lower down, so no figure is repeated. DoorDash’s workflow count, ClassPass’s manual-work reduction, and TinyAgent’s published benchmark measure different things; none establishes a head-to-head win against another platform.</div></div></div></section><section class="section" id="execution"><div class="frame"><div class="wrap spacer">
+<div class="section-head"><h2>Meet <span class="orange">Mako.</span></h2><div class="section-desc"><p>The web-native model behind every workflow on this page. Most agents run on general models that were never trained to operate the web. Mako was.</p></div></div>
+<div class="mako-block">
+<div class="mako-lead"><div class="eyebrow">TinyFish's own web-native model</div><h3>Trained to operate the web, not just read it.</h3><p>General models read pages. <b>Mako runs them</b> — it clicks, types, signs in, follows pages that change, and recovers when a step breaks. Because it learns from real production runs across hundreds of enterprise sites, it finishes multi-step work that general-model tools stall on, with far less site-by-site scripting to maintain.</p><a class="link" href="https://www.tinyfish.ai/mako">Read the Mako technical report →</a></div>
+<div class="mako-panel"><div class="mp-cap">Mako · by the numbers</div><div class="mp-stats">
+<div><span class="mp-num">89.9<span class="mp-unit">%</span></span><span class="mp-txt"><strong>Online-Mind2Web task success</strong><small>Published benchmark, 300 runs public. A task-completion score, not an uptime figure.</small></span></div>
+<div><span class="mp-num">35B<span class="mp-unit"> / 3B</span></span><span class="mp-txt"><strong>Total / active parameters</strong><small>A mixture-of-experts model, efficient enough to run web work at production scale.</small></span></div>
+<div><span class="mp-num">1st</span><span class="mp-txt"><strong>Web-native model of its kind</strong><small>Trained on production enterprise web-task data, not the open internet.</small></span></div>
+</div></div>
+</div>
+<div class="mako-why">
+<div><div class="mw-ic">01 · Adapts</div><h4>Pages change. Mako keeps working.</h4><p>Selectors and scripts break the moment a site ships a redesign. Mako reads the page the way a person would and adapts in the same run.</p><div class="mw-out">Fewer broken automations to babysit.</div></div>
+<div><div class="mw-ic">02 · Authenticated</div><h4>Works behind the login.</h4><p>The data that runs a business sits behind sign-ins. Mako authenticates and operates logged-in sites, not just public pages.</p><div class="mw-out">Reach the workflows that actually matter.</div></div>
+<div><div class="mw-ic">03 · Generalizes</div><h4>One model, every site.</h4><p>Instead of maintaining a separate scraper per site, one model generalizes across hundreds of them and holds up as they change.</p><div class="mw-out">Ship workflows, not maintenance.</div></div>
+</div>
+<div aria-label="Illustrative authenticated workflow" class="login-story">
+<div class="login-copy"><span class="od-tag">Supplier portal example</span><h3>A sign-in, an invoice, and a record of the run.</h3><p>Switch between the steps to see how an authenticated workflow is handled.</p><div aria-label="Authenticated workflow steps" class="login-tabs" role="tablist">
+<button aria-controls="login-panel-1" aria-selected="true" class="is-active" data-login="1" id="login-tab-1" role="tab" tabindex="0" type="button"><b>01</b> Log in</button><button aria-controls="login-panel-2" aria-selected="false" data-login="2" id="login-tab-2" role="tab" tabindex="-1" type="button"><b>02</b> Navigate</button><button aria-controls="login-panel-3" aria-selected="false" data-login="3" id="login-tab-3" role="tab" tabindex="-1" type="button"><b>03</b> Complete</button>
+</div><p class="login-value">TinyVault handles credentials. TinyProfiles keeps sessions available.</p></div>
+<div class="login-preview"><div class="od-bar"><span class="od-dots"><i></i><i></i><i></i></span><span class="od-url">portal.acme.com</span><span class="od-badge">TinyAgent</span></div>
+<section aria-labelledby="login-tab-1" class="login-panel is-active" id="login-panel-1" role="tabpanel"><div class="login-form"><small>Acme Supplier Portal</small><h4>Sign in</h4><label>Email</label><div class="lf-field">ops@yourco.com</div><label>Password</label><div class="lf-field">••••••••••</div><div class="lf-note"><svg aria-hidden="true"><use href="#fish"></use></svg> Filled via TinyVault · hidden from model</div><div class="lf-button">Continue →</div></div></section>
+<section aria-labelledby="login-tab-2" class="login-panel" hidden="" id="login-panel-2" role="tabpanel"><div class="login-form lf-wide"><small>Acme Supplier Portal</small><h4>Invoices</h4><div class="lf-grid"><div><span>September invoices</span><b>View →</b></div><div class="lf-selected"><span>October invoices</span><b>Open ✓</b></div><div><span>November invoices</span><b>View →</b></div></div><div class="lf-note"><svg aria-hidden="true"><use href="#fish"></use></svg> Navigating on the live site</div></div></section>
+<section aria-labelledby="login-tab-3" class="login-panel" hidden="" id="login-panel-3" role="tabpanel"><div class="login-form lf-wide"><small>Run summary · illustrative</small><h4>Task complete <span style="color:#26814c">✓</span></h4><div class="lf-grid"><div><span>Find invoice</span><b>Complete</b></div><div><span>Download document</span><b>Complete</b></div><div><span>Return result</span><b>JSON + file</b></div></div><div class="lf-note"><svg aria-hidden="true"><use href="#fish"></use></svg> Replay steps and review what happened</div></div></section>
+<div class="login-caption">Interface preview based on TinyFish public demos. Not a live run.</div></div>
+</div>
+
+<div class="editor-note"><strong>04 / Answer the hard questions</strong> · Mako explains the execution mechanism; TinyVault and Profiles address identity, and run recordings make activity reviewable. Keep the demo interactive rather than repeating feature cards. Mako now sits high on the page as the core differentiator, and enterprise controls have their own consolidated band below.</div>
+</div></div></section><section class="section" id="usecases"><div class="frame"><div class="wrap spacer">
 <div class="section-head"><h2>What you can <span class="orange">get done.</span></h2><div class="section-desc"><p>One platform, many jobs, across every industry your agents touch. Describe the work in plain English; TinyFish finishes it and returns structured data.</p></div></div>
 <div class="four">
 <div class="use-card"><div class="icon-frame"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M10.3 21a2 2 0 0 0 3.4 0"/></svg></div><h3>Monitor</h3><p>Watch prices, listings, filings and job posts across sites, and get told when something changes.</p><div class="use-result">Retail · travel · finance · hiring</div></div>
@@ -696,7 +816,7 @@ Return structured JSON with the same fields for every site.</textarea>
 <div class="use-card"><div class="icon-frame"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h3>Automate portals</h3><p>Sign in, fill forms and pull files from supplier and partner portals, behind the login.</p><div class="use-result">Authenticated · multi-step · recorded</div></div>
 </div>
 <div class="editor-note"><strong>02 / Breadth before depth</strong> · TinyFish's own homepage leads with four cross-industry jobs, which is a strength. I keep it but frame each around finishing the work and returning structured data, so the hero example reads as one instance of a general capability rather than a single vertical.</div>
-</div></div></section><section class="section" id="products"><div class="frame"><div class="wrap spacer"><div class="section-head"><h2>Search, browse, <span class="orange">and act.</span></h2><div class="section-desc"><p>Search and Fetch gather live information. Browser and Agent handle the actions that follow.</p></div></div>
+</div></div></section><section class="section" id="products"><div class="frame"><div class="wrap spacer"><div class="section-head"><h2>See it <span class="orange">work.</span></h2><div class="section-desc"><p>From a prompt to a finished result. Search and Fetch gather live data; Browser and Agent do the work that follows.</p></div></div>
 <div aria-label="Illustrative TinyFish product experience" class="product-preview minimal-product-preview">
 <div class="product-preview-left"><h3>Explore the tools.</h3>
 <div aria-label="Select TinyFish product preview" class="pp-tabs" role="tablist">
@@ -704,7 +824,7 @@ Return structured JSON with the same fields for every site.</textarea>
 <button aria-controls="preview-fetch" aria-selected="false" class="pp-tab" data-preview="fetch" id="tab-fetch" role="tab" tabindex="-1" type="button"><span>02</span><b>TinyFetch</b><small>Free</small></button>
 <button aria-controls="preview-browser" aria-selected="false" class="pp-tab" data-preview="browser" id="tab-browser" role="tab" tabindex="-1" type="button"><span>03</span><b>TinyBrowser</b></button>
 <button aria-controls="preview-agent" aria-selected="false" class="pp-tab" data-preview="agent" id="tab-agent" role="tab" tabindex="-1" type="button"><span>04</span><b>TinyAgent</b><small class="pp-mako">Mako</small></button>
-</div><a class="link pp-docs" href="https://docs.tinyfish.ai/">View API docs ↗</a></div>
+</div><a class="link pp-docs" href="https://docs.tinyfish.ai/">View API docs →</a></div>
 <div class="pp-stage">
 <section aria-labelledby="tab-search" class="pp-screen is-active" id="preview-search" role="tabpanel"><div class="pp-bar"><span class="od-dots"><i></i><i></i><i></i></span><span>Search results</span><span class="od-badge">JSON ready</span></div><div class="pp-body"><div class="pp-prompt">Find current pricing for the Aurora 14 across retail partners.</div><div class="pp-process"><svg aria-hidden="true"><use href="#fish"></use></svg> TinySearch · aurora 14 laptop price</div><div class="pp-result"><strong>Aurora 14 Laptop</strong><small>northgate.com</small><b>$1,299</b></div><div class="pp-result pp-best"><strong>Aurora 14 (2026)</strong><small>baymarket.com</small><b>$1,199</b></div><div class="pp-result"><strong>Aurora 14 Laptop</strong><small>havenshop.com</small><b>$1,299</b></div><div class="pp-answer">Baymarket has the lowest price at <b>$1,199.</b></div></div></section>
 <section aria-labelledby="tab-fetch" class="pp-screen" hidden="" id="preview-fetch" role="tabpanel"><div class="pp-bar"><span class="od-dots"><i></i><i></i><i></i></span><span>Fetch · page → Markdown</span><span class="od-badge">Free</span></div><div class="pp-body"><div class="pp-prompt">https://example.com/pricing</div><div class="pp-process"><svg aria-hidden="true"><use href="#fish"></use></svg> TinyFetch · cleaned content</div><pre class="pp-code"># Pricing
@@ -717,43 +837,37 @@ Includes team workflows
 $129 / month
 Includes advanced controls</pre><div class="pp-answer">Clean, structured page content for downstream AI workflows.</div></div></section>
 <section aria-labelledby="tab-browser" class="pp-screen" hidden="" id="preview-browser" role="tabpanel"><div class="pp-bar"><span class="od-dots"><i></i><i></i><i></i></span><span>Browser · live session</span><span class="od-badge">Connected</span></div><div class="pp-body"><div class="pp-prompt">Open a cloud browser session for a website.</div><div class="pp-process"><svg aria-hidden="true"><use href="#fish"></use></svg> TinyBrowser · persistent session</div><div class="pp-browser"><div class="pp-browser-bar">◀   ↻   portal.acme.com</div><div class="pp-browser-content"><b>Acme supplier portal</b><p>Welcome back to your account.</p><div class="od-skeleton" style="width:60%"></div><div class="od-skeleton slim" style="width:82%"></div><div class="od-skeleton slim" style="width:69%"></div></div></div><div class="pp-answer">Control the browser through Playwright, Puppeteer or CDP.</div></div></section>
-<section aria-labelledby="tab-agent" class="pp-screen" hidden="" id="preview-agent" role="tabpanel"><div class="pp-bar"><span class="od-dots"><i></i><i></i><i></i></span><span>Agent run · illustrative</span><span class="pp-mako">✦ Mako</span></div><div class="pp-body"><div class="pp-prompt">Download October invoices from a supplier portal.</div><div class="pp-process"><svg aria-hidden="true"><use href="#fish"></use></svg> TinyAgent · task complete</div><div class="pp-agent-steps"><div><span class="pp-check">✓</span> Sign in with TinyVault</div><div><span class="pp-check">✓</span> Find October invoices</div><div><span class="pp-check">✓</span> Return files and structured data</div></div><div class="pp-answer">Result available · <b>View run recording ↗</b></div></div></section>
+<section aria-labelledby="tab-agent" class="pp-screen" hidden="" id="preview-agent" role="tabpanel"><div class="pp-bar"><span class="od-dots"><i></i><i></i><i></i></span><span>Agent run · illustrative</span><span class="pp-mako">✦ Mako</span></div><div class="pp-body"><div class="pp-prompt">Download October invoices from a supplier portal.</div><div class="pp-process"><svg aria-hidden="true"><use href="#fish"></use></svg> TinyAgent · task complete</div><div class="pp-agent-steps"><div><span class="pp-check">✓</span> Sign in with TinyVault</div><div><span class="pp-check">✓</span> Find October invoices</div><div><span class="pp-check">✓</span> Return files and structured data</div></div><div class="pp-answer">Result available · <b>View run recording →</b></div></div></section>
 <p class="pp-footnote">Interface preview based on public TinyFish demos. Not a live session.</p>
 </div></div><div class="editor-note"><strong>03 / Show the platform, don’t repeat it</strong> · Use one interactive product example instead of separate use-case cards plus product cards. Search/Fetch attract developers; Agent/Browser demonstrate the path toward complex execution. Preview content is illustrative.</div></div></div></section><section class="section" id="audiences"><div class="frame"><div class="wrap spacer">
 <div class="section-head"><h2>One platform. <span class="orange">Two ways in.</span></h2><div class="section-desc"><p>Developers start in minutes with an API key. Enterprise teams bring production workflows with the controls IT needs, on the same platform and the same positioning.</p></div></div>
 <div class="lanes motion-lanes">
 <div class="lane"><span class="eyebrow">FOR DEVELOPERS</span><h3>Start building in minutes.</h3><p>Self-serve from an API key. No sales call to try it.</p>
 <ul class="ticks"><li>Search and Fetch are free on every plan</li><li>Works with MCP and the model you already use</li><li>The model handles changing pages, so less script maintenance</li><li>Go from first call to a working task fast</li></ul>
-<div class="cta-links"><a class="primary" href="https://agent.tinyfish.ai/">Get API Key ↗</a><a class="link" href="https://docs.tinyfish.ai/">Read the docs ↗</a></div></div>
+<div class="cta-links"><a class="primary" href="https://agent.tinyfish.ai/">Get API Key →</a><a class="link" href="https://docs.tinyfish.ai/">Read the docs →</a></div></div>
 <div class="lane enterprise"><span class="eyebrow">FOR ENTERPRISE</span><h3>Run it in production, at scale.</h3><p>Complex, authenticated workflows across many sites, with the controls and support IT expects.</p>
 <ul class="ticks"><li>Authenticated multi-step workflows across hundreds of sites</li><li>SSO, audit logs and TinyVault credential isolation</li><li>Deployment options and SLA discussions</li><li>A clear policy on how your data is used and whether it trains models</li></ul>
-<div class="cta-links"><a class="primary" href="https://www.tinyfish.ai/talk-to-sales">Talk to Sales ↗</a><a class="link" href="https://trust.tinyfish.ai/">Trust Center ↗</a></div></div>
+<div class="cta-links"><a class="primary" href="https://www.tinyfish.ai/talk-to-sales">Talk to Sales →</a><a class="link" href="https://trust.tinyfish.ai/">Trust Center →</a></div></div>
 </div>
 <div class="editor-note"><strong>02 / Two audiences, one page</strong> · A developer and an enterprise buyer each see their own path and value without splitting the positioning. Patterned on how Stripe, Cloudflare and Exa route a self-serve motion and a sales-led motion on one homepage. The data-use line matters most here: because Mako is trained on production web-task data, the enterprise buyer's first question is whether their data trains the model, so the page should answer it directly.</div>
-</div></div></section><section class="section" id="execution"><div class="frame"><div class="wrap spacer">
-<div class="section-head"><h2>Built for <span class="orange">websites that change.</span></h2><div class="section-desc"><p>Websites change. Real work happens behind logins and across multiple pages.</p></div></div><div class="execution-explainer">
-<div class="execution-intro"><h3>Meet Mako.</h3><p>Mako is trained for web tasks. It helps TinyAgent navigate changing pages and carry out multi-step work without needing a fixed script for every screen.</p><a class="link" href="https://www.tinyfish.ai/mako">Meet Mako ↗</a></div>
-</div>
-<div aria-label="Illustrative authenticated workflow" class="login-story">
-<div class="login-copy"><span class="od-tag">Supplier portal example</span><h3>A sign-in, an invoice, and a record of the run.</h3><p>Switch between the steps to see how an authenticated workflow is handled.</p><div aria-label="Authenticated workflow steps" class="login-tabs" role="tablist">
-<button aria-controls="login-panel-1" aria-selected="true" class="is-active" data-login="1" id="login-tab-1" role="tab" tabindex="0" type="button"><b>01</b> Log in</button><button aria-controls="login-panel-2" aria-selected="false" data-login="2" id="login-tab-2" role="tab" tabindex="-1" type="button"><b>02</b> Navigate</button><button aria-controls="login-panel-3" aria-selected="false" data-login="3" id="login-tab-3" role="tab" tabindex="-1" type="button"><b>03</b> Complete</button>
-</div><p class="login-value">TinyVault handles credentials. TinyProfiles keeps sessions available.</p></div>
-<div class="login-preview"><div class="od-bar"><span class="od-dots"><i></i><i></i><i></i></span><span class="od-url">portal.acme.com</span><span class="od-badge">TinyAgent</span></div>
-<section aria-labelledby="login-tab-1" class="login-panel is-active" id="login-panel-1" role="tabpanel"><div class="login-form"><small>Acme Supplier Portal</small><h4>Sign in</h4><label>Email</label><div class="lf-field">ops@yourco.com</div><label>Password</label><div class="lf-field">••••••••••</div><div class="lf-note"><svg aria-hidden="true"><use href="#fish"></use></svg> Filled via TinyVault · hidden from model</div><div class="lf-button">Continue →</div></div></section>
-<section aria-labelledby="login-tab-2" class="login-panel" hidden="" id="login-panel-2" role="tabpanel"><div class="login-form lf-wide"><small>Acme Supplier Portal</small><h4>Invoices</h4><div class="lf-grid"><div><span>September invoices</span><b>View →</b></div><div class="lf-selected"><span>October invoices</span><b>Open ✓</b></div><div><span>November invoices</span><b>View →</b></div></div><div class="lf-note"><svg aria-hidden="true"><use href="#fish"></use></svg> Navigating on the live site</div></div></section>
-<section aria-labelledby="login-tab-3" class="login-panel" hidden="" id="login-panel-3" role="tabpanel"><div class="login-form lf-wide"><small>Run summary · illustrative</small><h4>Task complete <span style="color:#26814c">✓</span></h4><div class="lf-grid"><div><span>Find invoice</span><b>Complete</b></div><div><span>Download document</span><b>Complete</b></div><div><span>Return result</span><b>JSON + file</b></div></div><div class="lf-note"><svg aria-hidden="true"><use href="#fish"></use></svg> Replay steps and review what happened</div></div></section>
-<div class="login-caption">Interface preview based on TinyFish public demos. Not a live run.</div></div>
-</div>
-<div class="trust-summary"><div><strong>Security and control for enterprise teams.</strong><span>SSO, audit logs, credential management and deployment options.</span></div><div class="trust-summary-links"><a href="https://trust.tinyfish.ai/">Trust Center ↗</a><a href="https://www.tinyfish.ai/talk-to-sales">Talk to Sales ↗</a></div></div>
-<div class="editor-note"><strong>04 / Answer the hard questions</strong> · Mako explains the execution mechanism; TinyVault and Profiles address identity, and run recordings make activity reviewable. Keep the demo interactive rather than repeating feature cards. Enterprise details are linked, not packed into the homepage.</div>
 </div></div></section><section class="section" id="customers"><div class="frame"><div class="wrap spacer">
 <div class="section-head"><h2>Real teams. <span class="orange">Real outcomes.</span></h2><div class="section-desc"><p>Lead with the result, then link to the full customer story.</p></div></div>
 <div class="stories">
-<article class="story"><span class="story-logo">DoorDash</span><p class="story-label">Web workflows at scale</p><strong>1M+</strong><div class="metric-label">Quarterly web workflows run on TinyFish.</div><div class="story-quote"><p>Managing web interaction complexity at global scale.</p><span>DoorDash · customer story</span></div><div class="story-footer"><a href="https://www.tinyfish.ai/customers">Read the story ↗</a></div></article>
-<article class="story"><span class="story-logo">classpass</span><p class="story-label">Operations automation</p><strong>98.6%</strong><div class="metric-label">Less manual work across live-web operations.</div><div class="story-quote"><p>Keeping 32,000+ studio schedules accurate without manual checking.</p><span>ClassPass · customer story</span></div><div class="story-footer"><a href="https://www.tinyfish.ai/customers">Read the story ↗</a></div></article>
-<article class="story"><span class="story-logo">Grubhub</span><p class="story-label">Market intelligence</p><strong>353</strong><div class="metric-label">Net-new restaurants found in Boston.</div><div class="story-quote"><p>Turning messy web signals into a repeatable operating system.</p><span>Grubhub · customer story</span></div><div class="story-footer"><a href="https://www.tinyfish.ai/customers">Read the story ↗</a></div></article>
+<article class="story"><span class="story-logo">DoorDash</span><p class="story-label">Web workflows at scale</p><strong>1M+</strong><div class="metric-label">Quarterly web workflows run on TinyFish.</div><div class="story-quote"><p>Managing web interaction complexity at global scale.</p><span>DoorDash · customer story</span></div><div class="story-footer"><a href="https://www.tinyfish.ai/customers">Read the story →</a></div></article>
+<article class="story"><span class="story-logo">classpass</span><p class="story-label">Operations automation</p><strong>98.6%</strong><div class="metric-label">Less manual work across live-web operations.</div><div class="story-quote"><p>Keeping 32,000+ studio schedules accurate without manual checking.</p><span>ClassPass · customer story</span></div><div class="story-footer"><a href="https://www.tinyfish.ai/customers">Read the story →</a></div></article>
+<article class="story"><span class="story-logo">Grubhub</span><p class="story-label">Market intelligence</p><strong>353</strong><div class="metric-label">Net-new restaurants found in Boston.</div><div class="story-quote"><p>Turning messy web signals into a repeatable operating system.</p><span>Grubhub · customer story</span></div><div class="story-footer"><a href="https://www.tinyfish.ai/customers">Read the story →</a></div></article>
 </div>
 <div class="editor-note"><strong>03 / Proof-first storytelling</strong> · Numbers first, with visible customer names so the outcome stays readable in text-only extraction. These are TinyFish's publicly reported results; the exact quotes and full stories live on the customers page.</div>
+</div></div></section><section class="section" id="enterprise"><div class="frame"><div class="wrap spacer">
+<div class="section-head"><h2>Built for enterprise <span class="orange">from day one.</span></h2><div class="section-desc"><p>Run authenticated, multi-step workflows in production, with the controls IT signs off on.</p></div></div>
+<div class="four">
+<div class="use-card"><div class="icon-frame"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h3>Security</h3><p>SSO, audit logs, and TinyVault so the model never sees credentials.</p></div>
+<div class="use-card"><div class="icon-frame"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Your data</h3><p>A clear policy on retention and whether your data trains models, set in your agreement.</p></div>
+<div class="use-card"><div class="icon-frame"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Readiness</h3><p>SOC 2 and ISO 27001, with VPC and deployment options.</p></div>
+<div class="use-card"><div class="icon-frame"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div><h3>Scale &amp; support</h3><p>Higher concurrency, SLAs, and a team that helps you roll out.</p></div>
+</div>
+<div class="trust-summary"><div><strong>Ready for security review.</strong><span>See the controls, data handling and compliance details, or bring your requirements to the team.</span></div><div class="trust-summary-links"><a href="https://trust.tinyfish.ai/">Trust Center →</a><a href="https://www.tinyfish.ai/talk-to-sales">Talk to Sales →</a></div></div>
+<div class="editor-note"><strong>07 / Built for enterprise</strong> · Enterprise signals were scattered across the page. Consolidating security, data policy, readiness and scale into one band gives the buying committee a single place to clear their checklist, with the data-use policy called out because it is the first question for a company evaluating a model trained on production data.</div>
 </div></div></section><section class="section" id="pricing"><div class="frame"><div class="wrap spacer">
 <div class="section-head"><h2>Simple pricing for <span class="orange">real web work.</span></h2><div class="section-desc"><p>Read the web for free. Pay for execution. Move to Enterprise when you need higher concurrency, controls and scale.</p></div></div>
 <div class="pricing-list">
@@ -764,7 +878,7 @@ Includes advanced controls</pre><div class="pp-answer">Clean, structured page co
 <div class="price-tag enterprise-price"><span class="title">Enterprise</span><strong>Let's talk</strong><small>Higher concurrency · security · rollout support</small></div>
 </div>
 <p class="pricing-caveat">Usage plans run a limited number of agents at once (TinyFish lists two concurrent runs); Enterprise raises the limit. Confirm current thresholds with the team.</p>
-<div class="linkline"><a class="link" href="https://www.tinyfish.ai/pricing">See full pricing →</a><a class="link" href="https://www.tinyfish.ai/talk-to-sales">Talk to Sales ↗</a></div>
+<div class="linkline"><a class="link" href="https://www.tinyfish.ai/pricing">See full pricing →</a><a class="link" href="https://www.tinyfish.ai/talk-to-sales">Talk to Sales →</a></div>
 <div class="editor-note"><strong>06 / From PLG to sales</strong> · Keep free Search and Fetch and transparent usage pricing, and give enterprise a clear route when workflows need higher concurrency or controls. This is also the handoff I would measure: accounts that hit the concurrency limit and then contact sales.</div>
 </div></div></section><section class="section" id="faq"><div class="frame"><div class="wrap spacer">
 <div class="section-head"><h2>Questions, <span class="orange">answered.</span></h2><div class="section-desc"><p>What developers and enterprise buyers ask before they commit.</p></div></div>
@@ -776,7 +890,39 @@ Includes advanced controls</pre><div class="pp-answer">Clean, structured page co
 <details><summary>How many agents can I run at once?</summary><p>Usage-based plans run a limited number of agents concurrently; TinyFish lists two concurrent runs on the self-serve tier. Enterprise raises the limit, so if your workflows need more concurrency, that is the point to talk to the team. Confirm the current numbers with TinyFish rather than treating them as fixed.</p></details>
 <details><summary>Is it free to start?</summary><p>Search and Fetch are free on every plan once you have an API key. Browser and Agent are usage-based, so you only pay for what you run, and there is no sales call required to try it.</p></details>
 </div>
-</div></div></section><section class="section"><div class="frame"><div class="last"><span class="eyebrow">GET STARTED</span><h2>Your agents have <span class="orange">work to do.</span></h2><p>Start free with an API key, or bring a production workflow to the team. Search and Fetch are free on every plan, with no sales call to begin.</p><div class="actions"><a class="primary" href="https://agent.tinyfish.ai/">Get API Key ↗</a><a class="secondary" href="https://www.tinyfish.ai/talk-to-sales">Talk to Sales ↗</a></div><p class="security-handoff">Evaluating TinyFish for your team? <a href="https://www.tinyfish.ai/enterprise">Explore enterprise security and controls →</a></p><div class="editor-note"><strong>05 / Two motions, one promise</strong> · Developers can get started without a sales call; enterprise buyers have a clear path to evaluate security, reliability and scale. Measure first successful tasks and qualified enterprise conversations, not only click-throughs.</div></div></div></section><section class="review" id="pmm-review"><div class="frame"><div class="wrap review-inner"><div class="review-intro"><span class="eyebrow">PMM TAKE-HOME / REVIEW NOTES</span><h2>Why I changed the homepage.</h2><p>A homepage direction for the PMM take-home, not an official TinyFish design.</p></div><div class="review-grid">
+</div></div></section><section class="section" id="events"><div class="frame"><div class="wrap spacer">
+<div class="section-head"><h2>Meet the <span class="orange">TinyFish team.</span></h2><div class="section-desc"><p>We are in Vietnam this October. Four ways to say hi, trade notes on agents, and see what the team is building.</p></div></div>
+<div class="ev-grid">
+<a class="ev-card" href="https://lnkd.in/gfunCZdG" target="_blank" rel="noopener noreferrer">
+<div class="ev-poster pv-vietnam"><div class="pz-grid"></div><span class="pz-star" aria-hidden="true">★</span>
+<span class="ev-wordmark pz"><svg aria-hidden="true"><use href="#fish"></use></svg> TinyFish</span>
+<div class="pz"><h3 class="ev-title">Xin chào, Việt Nam.</h3><div class="pz-sub">GRAND OPENING · HCMC</div></div>
+<svg class="pz-fish" aria-hidden="true"><use href="#fish"></use></svg></div>
+<div class="ev-body"><span class="ev-date">FRI · OCT 23 · 5 to 8 PM</span><h4>Vietnam office grand opening</h4><p class="ev-loc">Ho Chi Minh City</p><p>Where the waters are good, the fishes come home. Celebrate the team's new home base with us.</p><span class="ev-link">View event →</span></div>
+</a>
+<a class="ev-card" href="https://luma.com/uajmcurm" target="_blank" rel="noopener noreferrer">
+<div class="ev-poster pv-fishships"><div class="pz-grid"></div><div class="pz-route" aria-hidden="true"></div>
+<span class="ev-wordmark pz"><svg aria-hidden="true"><use href="#fish"></use></svg> TinyFish × Build Stuffs</span>
+<div class="pz"><h3 class="ev-title">Fish <span class="amp">&amp;</span> Ships.</h3><div class="pz-sub">A TECH EXCHANGE · HCMC</div></div></div>
+<div class="ev-body"><span class="ev-date">SUN · OCT 25 · 3 to 5 PM</span><h4>Fish &amp; Ships: a tech exchange</h4><p class="ev-loc">The Joi Factory, Ho Chi Minh City</p><p>Live web-agent demos, local builders, and an hour of building together with the HCMC community.</p><span class="ev-link">View event →</span></div>
+</a>
+<a class="ev-card" href="https://lnkd.in/gZV6A4c7" target="_blank" rel="noopener noreferrer">
+<div class="ev-poster pv-bigminds"><div class="pz-grid"></div>
+<span class="ev-wordmark pz"><svg aria-hidden="true"><use href="#fish"></use></svg> TinyFish × GenAI Fund</span>
+<div class="pz"><h3 class="ev-title">TinyFish, Big Minds.</h3><div class="pz-sub">A PRIVATE DINNER</div></div>
+<svg class="pz-fish" aria-hidden="true" style="opacity:.5"><use href="#fish"></use></svg></div>
+<div class="ev-body"><span class="ev-date">MON · OCT 26</span><h4>TinyFish, Big Minds</h4><p class="ev-loc">By invitation · Ho Chi Minh City</p><p>An intimate dinner with GenAI Fund and the people building the agent ecosystem in the region.</p><span class="ev-link">Request an invite →</span></div>
+</a>
+<a class="ev-card" href="https://lnkd.in/gKeqgGCC" target="_blank" rel="noopener noreferrer">
+<div class="ev-poster pv-happyhour"><div class="pz-grid"></div>
+<span class="ev-wordmark pz"><svg aria-hidden="true"><use href="#fish"></use></svg> TinyFish × Overseas Vietnamese</span>
+<div class="pz"><h3 class="ev-title">Tech Happy Hour.</h3><div class="pz-sub">DRINKS &amp; AGENTS · HCMC</div></div>
+<svg class="pz-fish" aria-hidden="true"><use href="#fish"></use></svg></div>
+<div class="ev-body"><span class="ev-date">WED · OCT 28</span><h4>Tech Happy Hour</h4><p class="ev-loc">Ho Chi Minh City</p><p>Casual drinks and conversation with the Overseas Vietnamese tech community. Come as you are.</p><span class="ev-link">View event →</span></div>
+</a>
+</div>
+<p class="events-footnote">Posters are concept art for this demo. Links go to the official event pages; dates and details may change.</p>
+</div></div></section><section class="section"><div class="frame"><div class="last"><span class="eyebrow">GET STARTED</span><h2>Your agents have <span class="orange">work to do.</span></h2><p>Start free with an API key, or bring a production workflow to the team. Search and Fetch are free on every plan, with no sales call to begin.</p><div class="actions"><a class="primary" href="https://agent.tinyfish.ai/">Get API Key →</a><a class="secondary" href="https://www.tinyfish.ai/talk-to-sales">Talk to Sales →</a></div><p class="security-handoff">Evaluating TinyFish for your team? <a href="https://www.tinyfish.ai/enterprise">Explore enterprise security and controls →</a></p><div class="editor-note"><strong>05 / Two motions, one promise</strong> · Developers can get started without a sales call; enterprise buyers have a clear path to evaluate security, reliability and scale. Measure first successful tasks and qualified enterprise conversations, not only click-throughs.</div></div></div></section><section class="review" id="pmm-review"><div class="frame"><div class="wrap review-inner"><div class="review-intro"><span class="eyebrow">PMM TAKE-HOME / REVIEW NOTES</span><h2>Why I changed the homepage.</h2><p>A homepage direction for the PMM take-home, not an official TinyFish design.</p></div><div class="review-grid">
 <article class="review-box"><strong>01 / Positioning</strong><p>The current copy explains what the platform can do. I wanted the hero to speak to the job a customer needs done. “Other tools can’t” is still a claim to test against competitors, not a proven fact. I would soften it if the comparison data does not support it.</p></article>
 <article class="review-box"><strong>02 / Customer proof</strong><p>I moved real results closer to the top. DoorDash, ClassPass and the benchmark each show a different kind of proof; I have kept those distinctions clear.</p></article>
 <article class="review-box"><strong>03 / Product discovery</strong><p>I kept one interactive product preview, rather than several sections describing the same tools. Developers can explore Search, Fetch, Browser and Agent without reading a product catalog.</p></article>
@@ -784,7 +930,7 @@ Includes advanced controls</pre><div class="pp-answer">Clean, structured page co
 <article class="review-box"><strong>05 / Two conversion paths</strong><p>Two routes, one page: an API key for developers and a sales conversation for enterprise buyers. I would measure first successful tasks, qualified inquiries and completed-workflow cost, then A/B test the hero.</p></article>
 <article class="review-box"><strong>Demo integrity</strong><p>Supplier portals, sample product search results and login steps are illustrative interface concepts, not real customer dashboards. The source homepage and public documentation should be checked before using this concept in production. This independent mockup remains noindexed.</p></article>
 </div></div></div></section></main>
-<footer class="footer"><div class="foot-inner minimal-foot"><div class="minimal-foot-top"><a class="brand" href="#home" style="color:white"><svg aria-hidden="true" class="fishmark"><use href="#fish"></use></svg>TinyFish</a><nav aria-label="Footer"><a href="#products">Platform</a><a href="#execution">Mako &amp; security</a><a href="https://docs.tinyfish.ai/">Docs</a><a href="https://www.tinyfish.ai/enterprise">Enterprise</a><a href="https://www.tinyfish.ai/">Official site ↗</a></nav></div><div class="legal"><span>Independent homepage concept · Not affiliated with TinyFish</span><span>Interface previews are illustrative · Customer results and benchmarks are separately labeled</span></div></div></footer>
+<footer class="footer"><div class="foot-inner minimal-foot"><div class="minimal-foot-top"><a class="brand" href="#home" style="color:white"><svg aria-hidden="true" class="fishmark"><use href="#fish"></use></svg>TinyFish</a><nav aria-label="Footer"><a href="#products">Platform</a><a href="#execution">Mako &amp; security</a><a href="https://docs.tinyfish.ai/">Docs</a><a href="https://www.tinyfish.ai/enterprise">Enterprise</a><a href="https://www.tinyfish.ai/">Official site →</a></nav></div><div class="legal"><span>Independent homepage concept · Not affiliated with TinyFish</span><span>Interface previews are illustrative · Customer results and benchmarks are separately labeled</span></div></div></footer>
 <script>
 (function(){const button=document.getElementById('notes-button');button.addEventListener('click',function(){const state=document.body.classList.toggle('notes-visible');button.textContent=state?'Hide PMM notes':'Show PMM notes';button.setAttribute('aria-expanded',String(state));});})();
 
